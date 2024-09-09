@@ -34,6 +34,8 @@
         location_name
         duration
         description
+
+
     
     - Education
         title 
@@ -41,13 +43,21 @@
         location_name
         description
 
+
+        
+
 # portfolio
     - Check Out Some of My Works
 
     - list of projects
         image 
         title
+        type_of_work -> ML or backend ....
         description
+
+        detail_image
+            - close
+            - github link
         
 
 # services

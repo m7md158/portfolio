@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block body %}
+    
+	
+
+    <section id="resume" class="grey-section">
+
+
+    <div class="row resume-timeline">
+
+        <div class="col-twelve resume-header">
+
+            <h1 style="color: #aa1d1d;"> WORK EXPERIENCE</h1>
+
+            </div> <!-- /resume-header -->
+            {% for experience in experiences %}
+            <div class="col-twelve">
+
+                <div class="timeline-wrap">
+
+                    <div class="timeline-block">
+
+                        <div class="timeline-ico">
+                        <i class="fa fa-briefcase"></i>
+                        </div>
+
+                        <div class="timeline-header">
+                        <h3>{{experience.title}}</h3>
+                        <p>{{experience.start_date}}- {{experience.present_end_date}}</p>
+                        </div>
+
+                        <div class="timeline-content">
+                        <h4>{{experience.name_company}}</h4>
+                        <p>{{experience.description}}</p>
+                        </div>
+
+                    </div> <!-- /timeline-block -->
+
+                
+            </div> <!-- /timeline-wrap -->   			
+
+            </div> <!-- /col-twelve -->
+        {% endfor %}
+
+
+            <div class="col-twelve resume-header">
+
+                <h1 style="color: #aa1d1d;">EDUCATION</h1>
+
+            </div> <!-- /resume-header -->
+
+        {% for education in educations %}
+            <div class="col-twelve">
+
+                <div class="timeline-wrap">
+
+                    <div class="timeline-block">
+
+                    <div class="timeline-ico">
+                        <i class="fa fa-graduation-cap"></i>
+                    </div>
+                    
+                    <div class="timeline-header">
+                        <h3>{{education.degree}}</h3>
+                        <p>{{education.start_date}} - {{education.present_end_date}}</p>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>{{education.trac_name}} - {{education.institution}}</h4>
+                        <p>{{education.description}}</p>
+                    </div>
+
+                    </div> <!-- /timeline-block -->
+            {% endfor %}
+                </div> <!-- /timeline-wrap -->   			
+
+            </div> <!-- /col-twelve -->
+        
+        </div> <!-- /resume-timeline -->
+        
+    </section> <!-- /features -->
+{% endblock body %}
