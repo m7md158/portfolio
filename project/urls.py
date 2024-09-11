@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
 
@@ -24,4 +26,11 @@ urlpatterns = [
     path('about/', include('about.urls', namespace='about')),
     path('contact/', include('contact.urls', namespace='contact')),
     path('resume/', include('resume.urls', namespace='resume')),
+    path('portfolio/', include('portfolio.urls', namespace='portfolio')),
+    path('services/', include('services.urls', namespace='services')),
+    path('contact/', include('contact.urls', namespace='contact')),
 ]
+
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -21,7 +21,7 @@
    <link rel="stylesheet" href="{% static 'css/base.css' %}">  
    <link rel="stylesheet" href="{% static 'css/main.css' %}">
    <link rel="stylesheet" href="{% static 'css/vendor.css' %}">   
-   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
    <style>
 		.navbar {
 		position: fixed;
@@ -59,10 +59,131 @@
             flex-wrap: wrap; /* Allows wrapping to the next line if there's not enough space */
             gap: 10px; /* Adds space between items */
         }
-        
+
+		.image-row-container {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		  
+		  .image-row {
+			display: flex;
+			justify-content: space-between;  /* Ensures the images take equal space */
+			width: 100%;
+		}
+		  
+		  .folio-item {
+			flex: 1 0 48%;  /* Each image takes about 48% of the row width with a small gap */
+			margin-bottom: 20px;  /* Add some space between the rows */
+		}
+		  
+		  .folio-item img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+		/* Container for image rows */
+.image-row-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.image-row {
+  display: flex;
+  justify-content: space-between; /* Ensures the images take equal space */
+  width: 100%;
+}
+
+.folio-item {
+  flex: 1 0 48%; /* Each image takes about 48% of the row width */
+  margin-bottom: 20px; /* Space between the rows */
+  position: relative; /* Needed for overlay positioning */
+}
+
+.folio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Smooth corners */
+}
+
+/* Image overlay */
+.image-overlay {
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px; /* Smooth overlay corners */
+}
+
+.overlay-content h3,
+.overlay-content span {
+  margin: 0;
+  padding: 5px;
+}
+
+.image-overlay:hover .overlay-content {
+  opacity: 1;
+}
+
+/* Modal */
+.popup-modal {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.media img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.description-box {
+  margin-top: 20px;
+}
+
+.link-box {
+  margin-top: 20px;
+}
+
+.link-box a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #fff;
+  background: #333;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.link-box a:hover {
+  background: #555;
+}
+
+
+		
 	</style>
 
-   <!-- script
+  <!-- script
    ================================================== -->   
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
@@ -82,9 +203,9 @@
 			<li><a href="{% url 'home:home' %}">Home</a></li>
 			<li><a href="{% url 'about:about' %}">About</a></li>
 			<li><a href="{% url 'resume:resume' %}">Resume</a></li>
-			<li><a href="#portfolio">Portfolio</a></li>
-			<li><a href="#services">Services</a></li>
-			<li><a href="#contact">Contact</a></li>
+			<li><a href="{% url 'portfolio:portfolio' %}">Portfolio</a></li>
+			<li><a href="{% url 'services:services' %}">Services</a></li>
+			<li><a href="{% url 'contact:contact' %}">Contact</a></li>
 		</ul>
 	</div>
    		

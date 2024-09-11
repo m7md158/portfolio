@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<section id="portfolio">
+  <div class="row section-intro">
+    <div class="col-twelve">
+      <h5>Portfolio</h5>
+      <h1>Check Out Some of My Works.</h1>
+    </div>
+  </div>
+  <!-- /section-intro -->
+
+  <div class="row portfolio-content">
+    <div class="image-row-container">
+      <div class="image-row">
+        {% for job in jobs %}
+        <!-- Each image container -->
+        <div class="folio-item">
+          <div class="item-wrap">
+            <img src="{{ job.image.url }}" alt="{{ job.title }}" />
+
+            <a href="{{job.id}}" class="overlay">
+              <div class="folio-item-table">
+                <div class="folio-item-cell">
+                  <h3 class="folio-title">{{ job.title }}</h3>
+                  <span class="folio-types"> {{ job.category }} </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Modal for each image -->
+ 
+        {% if forloop.counter|divisibleby:2 %}
+        </div><div class="image-row">
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- /portfolio-content -->
+</section>
+
+{% endblock body %}

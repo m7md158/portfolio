@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap4 %} 
+<style>
+  /* Ensures the image takes the full page */
+  .popup-modal {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 0;
+  }
+
+  .popup-modal img {
+    width: 80%;
+    height: 60vh; /* Image takes 60% of the height */
+    object-fit: cover;
+  }
+
+  /* Ensures the description box stays below the image */
+  .description-box {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .description-box h2 {
+    margin: 10px 0;
+    font-size: 2em;
+  }
+
+  .description-box p {
+    margin: 20px 0;
+    font-size: 1.2em;
+  }
+
+  .link-box {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .link-box a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 20px 100px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  .link-box a.popup-modal-dismiss {
+    background-color: #dc3545; /* Different color for close button */
+  }
+</style>
+
+
+
+
+<html>
+<head>
+    <title>{{job_detail.title}}</title>
+    <!-- Bootstrap CSS -->
+</head>
+<body>
+
+    <div id="modal-{{ forloop.counter }}" class="popup-modal slider mfp-hide">
+      <img src="{{ job_detail.image.url }}" alt="{{ job_detail.title }}" />
+    
+      <div class="description-box">
+        <h2>{{ job_detail.title }}</h2>
+        <h3>Description:</h3>
+        <p>{{ job_detail.description }}</p>
+        <div class="categories"> 
+          <h3> Category : {{ job_detail.category }} </h3>
+
+          </div>
+      </div>
+    
+      <div class="link-box">
+        <a href="{{ job_detail.github }}">GitHub Link</a>
+        <a href="{% url 'portfolio:portfolio' %}" class="popup-modal-dismiss">Previous</a>
+      </div>
+      
+    </div>
+    
+</body>
+</html>
+
