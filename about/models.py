@@ -38,11 +38,4 @@ def create_user_profile(sender,instance,created,**kwargs):
     
     
 
-class Job(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='jobs')
-    title  = models.CharField(max_length=50)
-    
-    def __str__(self):
-        return self.title
-    
     

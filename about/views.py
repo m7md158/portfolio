@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import User, Profile, Job, Skills
+from .models import User, Profile, Skills
 from django.http import FileResponse, Http404
 from django.shortcuts import get_object_or_404
 # Create your views here.
@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404
 def about_view(request):
     skills  = Skills.objects.all()
     profiles = Profile.objects.all()
-    jobs = Job.objects.all()
+    
     
     
     '''
@@ -16,5 +16,5 @@ def about_view(request):
     }
     '''
     
-    return render(request,"about/about.html",context={ 'skills' : skills , 'profiles' : profiles, 'jobs': jobs})
+    return render(request,"about/about.html",context={ 'skills' : skills , 'profiles' : profiles})
 
