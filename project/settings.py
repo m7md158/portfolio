@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'about','resume',
     'services','contact','home',
     'bootstrap4','portfolio',
+    'certification',
     'rest_framework',
 ]
 

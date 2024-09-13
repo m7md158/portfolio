@@ -29,6 +29,7 @@ urlpatterns = [
     path('portfolio/', include('portfolio.urls', namespace='portfolio')),
     path('services/', include('services.urls', namespace='services')),
     path('contact/', include('contact.urls', namespace='contact')),
+    path('certification/', include('certification.urls', namespace='certification')),
 ]
 
 
