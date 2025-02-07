@@ -13,11 +13,11 @@
    			<h1>Let me introduce myself.</h1>
 
    			<div class="intro-info">
-   				<p class="lead">My name is Mohamed Ahmed AbdelSamie (Moahmed Qabil) and I am a software engineer and Python developer. I am currently pursuing my bachelor's degree in Artificial Intelligence at Menoufia University and will graduate in 2026. I am deeply involved in many software development projects, specializing in backend development using Django framework and ML learning algorithms.
-
-					I have gained experience in web scraping and have completed certifications in Artificial Intelligence, Deep Learning, and Back-end Development from prestigious institutions such as NTI, ITI, Meta ,and IBM.
-					
-					With a strong foundation in programming languages like C++ and Python, and tools like Django, MySQL, and Git, I am continuously expanding my knowledge in machine learning and backend technologies.</p>
+   				<p class="lead">My name is Mohamed Ahmed AbdelSamie and I am a ML Engineer and Back-End Developer.
+					A prospective graduate (2026) from the Faculty of Artificial Intelligence, Menoufiya University. 
+					A highly skilled AI and back-end developer with strong expertise in Python, Django, and machine learning. 
+					Additionally, an experienced tech Content Creator on social media platforms, delivering engaging and educational videos.
+					,I am continuously expanding my knowledge in machine learning and backend technologies.</p>
    			</div>   			
 
    		</div>   		
@@ -27,34 +27,19 @@
 
    		<div class="col-six tab-full">
 
-   			<h3>Profile</h3>
+   			<h3>Personal Information</h3>
    			<ul class="info-list">
 				{% for profile in profiles %}
 					<li>
 						<strong>Fullname:</strong>
 						<span>{{profile.first_name}} {{profile.last_name}}</span>
 					</li>
-					<li>
-						<strong>Nickname:</strong>
-						<span>{{profile.nickname}} </span>
-					</li>
 
 					<li>
 						<strong>Birth Date:</strong>
 						<span>{{profile.birth_date}}</span>
 					</li>
-					<li>						
-						<strong>Job:</strong>
-						<div class="job-container">
-							{% for job in jobs %}
-								<div>{{ job.title}}, </div>
-							{% endfor %}
-						</div>
-					</li>
-					<li>
-						<strong>Website:</strong>
-						<span>{{profile.website}}</span>
-					</li>
+
 					<li>
 						<strong>Email:</strong>
 						<span>{{profile.email}}</span>
@@ -89,7 +74,7 @@
    	<div class="row button-section">
    		<div class="col-twelve">
    			<a href="{% url 'contact:contact' %}" title="Hire Me" class="button stroke smoothscroll">Contact Me</a>
-   			<a href="https://drive.google.com/file/d/1MJ-ac0sfJlzcLxSIPgXsOHSzy_LmZW5P/view?usp=drive_link" title="Download CV" class="button button-primary">Download CV</a>
+   			<a href="https://drive.google.com/drive/folders/1naNz44nEZjLSVSJ_JEoGSXv21myl95Wg" title="Download CV" class="button button-primary">Download CV</a>
    		</div>   		
    	</div>
 

@@ -66,7 +66,7 @@
         title
         description
 
-# Certificates
+
 
 # contact
     - What Can I Do For You?
